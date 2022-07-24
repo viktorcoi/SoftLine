@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>softLine</title>
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/CustomSelector.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
+    <script src="assets/js/CardScript.js" defer></script>
+    <script src="assets/js/ShowCVV.js"></script>
+    <script src="assets/js/Validation.js"></script>
+    <script src="assets/js/NavigationInput.js"></script>
+</head>
+<body>
+    <div class="container d-flex">
+        <form id="pay" class="margin-auto d-flex">
+            <h1>order</h1>
+            <div>
+                <div class="d-flex items-center for-input">
+                    <p class="hint">Card number</p>
+                    <input name="cardnumber" id="cardnumber" placeholder="•••• •••• •••• ••••" type="text"/>
+                    <div class="for-error-text pos-relative">
+                        <svg id="ccicon" class="ccicon right-elemnt pos-absolute transition_0_3" viewBox="0 0 750 471"></svg>
+                        <p class="error-text pos-absolute right-elemnt transition_0_3"></p>
+                    </div>
+                </div>
+                <div class="d-flex items-center for-input">
+                    <p class="hint">Expiration date</p>
+                    <div class="d-flex items-center between for-selectors">
+                        <div class="selector cursor-pointer pos-relative">
+                            <div tabindex="0" id="month" class="d-flex items-center between head-selector transition_0_3">
+                                <input readonly class="select cursor-pointer" title="month" name="month" placeholder="MM">
+                                <img class="transition_0_3" src="assets/img/arrow-down.svg" alt="arrow down">
+                            </div>
+                            <div class="optionals transition_0_3 pos-absolute"></div>
+                        </div>
+                        <p>/</p>
+                        <div class="d-flex items-center">
+                            <div class="selector cursor-pointer pos-relative">
+                                <div tabindex="0" id="year" class="d-flex items-center between head-selector transition_0_3">
+                                    <input readonly class="select cursor-pointer" title="year" name="year" placeholder="YY">
+                                    <img class="transition_0_3" src="assets/img/arrow-down.svg" alt="arrow down">
+                                </div>
+                                <div class="optionals transition_0_3 pos-absolute"></div>
+                            </div>
+                            <div class="pos-relative for-error-text">
+                                <p class="error-text special-hint pos-absolute right-elemnt transition_0_3"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex items-center for-input">
+                    <p class="hint">Cardholder name</p>
+                    <input id="username" name="username" placeholder="Name Surname" type="text"/>
+                    <div class="pos-relative for-error-text">
+                        <p class="error-text pos-absolute right-elemnt transition_0_3"></p>
+                    </div>
+                </div>
+                <div class="d-flex items-center for-input">
+                    <p class="hint">CVC/CVV</p>
+                    <div class="for-cvv">
+                        <div class="d-flex items-center between">
+                            <div class="pos-relative d-flex items-center">
+                                <input name="securitycode" id="securitycode" maxlength="3" placeholder="•••" type="password"/>
+                                <img class="show-cvv pos-absolute cursor-pointer transition_0_3" src="assets/img/eye.svg" alt="show svv">
+                            </div>
+                            <div class="pos-relative for-error-text">
+                                <p class="error-text special-hint pos-absolute right-elemnt transition_0_3"></p>
+                            </div>
+                        </div>
+                        <div class="pos-relative">
+                            <p class="hint-cvv pos-absolute">The last 3 digits on back of the card</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button form="none" id="button" type="submit">pay</button>
+        </form>
+    </div>
+</body>
+</html>
